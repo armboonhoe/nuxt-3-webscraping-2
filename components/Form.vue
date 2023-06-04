@@ -1,5 +1,6 @@
 <template>
     <div>
+        <button @click="getProfileBtn">getProfile</button>
         <form @submit="handleSubmit">
             <div>search : {{ searchTxt }}</div>
             <input type="text" v-model="searchTxt">
@@ -25,6 +26,12 @@ export default {
     props: {
         isLoading: {
             type: Boolean,
+        }
+    },
+    methods: {
+        async getProfileBtn(e) {
+            e.preventDefault()
+            return navigateTo('/profile')
         }
     },
     setup(props, { emit }) {

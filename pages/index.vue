@@ -10,4 +10,8 @@
 <script setup>
 import { usewebsiteRankings } from '~/store/websiteranking';
 const isLoading = ref(null);
+
+definePageMeta({
+    middleware: ['auth'],
+})
 </script>
